@@ -6,6 +6,7 @@ using UnityEngine;
 public class AnimationLoop : MonoBehaviour
 {
     public float speed;
+    public float pause = 0f;
     Animator animator;
     void Start()
     {
@@ -14,6 +15,6 @@ public class AnimationLoop : MonoBehaviour
 
     void Update()
     {
-        animator.SetFloat("time",(speed* Time.time) % 1.5f);
+        animator.SetFloat("time",(speed* Time.time) % (1f + pause));
     }
 }
