@@ -65,9 +65,20 @@ public class RoomViewController : MonoBehaviour
                 return;
             }
 
-            float d = (Input.touches[0].position - startPos).x;
+            //float d = (Input.touches[0].position - startPos).x;
+            //Debug.Log(d.ToString());
+            //float pixelsPerDegree = Screen.width / 60f;
+            //float newAngle = (startAngle - (d / pixelsPerDegree));
+            //while (newAngle < -180f)
+            //    newAngle += 360f;
+            //while (newAngle > 180f)
+            //    newAngle -= 360f;
+            ////transform.rotation = Quaternion.Euler(newAngle, 90f, -90f);
+            //transform.localEulerAngles = new Vector3(newAngle, 90f, -90f);
+
+            float d = (Input.touches[0].deltaPosition).x;
             float pixelsPerDegree = Screen.width / 60f;
-            transform.localEulerAngles = new Vector3(startAngle - (d / pixelsPerDegree), 90f, -90f);
+            transform.Rotate(Vector3.down, d / pixelsPerDegree);
 
         }
 
