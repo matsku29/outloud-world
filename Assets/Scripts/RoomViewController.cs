@@ -15,7 +15,8 @@ public class RoomViewController : MonoBehaviour
     State _state = State.None;
 
     Vector2 startPos = Vector2.zero;
-    float startAngle = 0f;
+
+    public static bool Dragging = false;
 
     private void Start()
     {
@@ -33,6 +34,7 @@ public class RoomViewController : MonoBehaviour
 
         if (_state == State.None)
         {
+            Dragging = false;
             if (Input.touchCount > 0)
             {
                 startPos = Input.touches[0].position;
@@ -41,6 +43,7 @@ public class RoomViewController : MonoBehaviour
         }
         if (_state == State.Down)
         {
+            Dragging = false;
             if (Input.touchCount == 0)
             {
                 Click();
@@ -54,37 +57,21 @@ public class RoomViewController : MonoBehaviour
             if (d > GameController.Instance.ViewDragThreshold)
             {
                 _state = State.Dragging;
-                startAngle = transform.localEulerAngles.x;
+                Dragging = true;
             }
         }
         if (_state == State.Dragging)
         {
             if (Input.touchCount == 0) 
             { 
-                _state = State.None; 
+                _state = State.None;
                 return;
             }
 
-            //float d = (Input.touches[0].position - startPos).x;
-            //Debug.Log(d.ToString());
-            //float pixelsPerDegree = Screen.width / 60f;
-            //float newAngle = (startAngle - (d / pixelsPerDegree));
-            //while (newAngle < -180f)
-            //    newAngle += 360f;
-            //while (newAngle > 180f)
-            //    newAngle -= 360f;
-            ////transform.rotation = Quaternion.Euler(newAngle, 90f, -90f);
-            //transform.localEulerAngles = new Vector3(newAngle, 90f, -90f);
-
             float d = (Input.touches[0].deltaPosition).x;
-            float pixelsPerDegree = Screen.width / 60f;
+            float pixelsPerDegree = Screen.width / 80f;
             transform.Rotate(Vector3.down, d / pixelsPerDegree);
 
-        }
-
-        if (_prevState != _state)
-        {
-            Debug.Log(_state.ToString());
         }
     }
 
