@@ -20,7 +20,7 @@ public class RoomViewController : MonoBehaviour
 
     private void Start()
     {
-        transform.localEulerAngles = new Vector3(0f, 90f, -90f);
+        //transform.localEulerAngles = new Vector3(0f, 90f, -90f);
     }
 
     private void Update()
@@ -70,7 +70,7 @@ public class RoomViewController : MonoBehaviour
 
             float d = (Input.touches[0].deltaPosition).x;
             float pixelsPerDegree = Screen.width / 80f;
-            transform.Rotate(Vector3.down, d / pixelsPerDegree);
+            transform.Rotate(-transform.up, d / pixelsPerDegree);
 
         }
     }
