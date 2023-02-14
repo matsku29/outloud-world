@@ -15,6 +15,7 @@ public class RoomViewController : MonoBehaviour
     State _state = State.None;
 
     Vector2 startPos = Vector2.zero;
+    Vector2 _prevPos;
 
     public static bool Dragging = false;
 
@@ -32,26 +33,28 @@ public class RoomViewController : MonoBehaviour
     {
         var _prevState = _state;
 
+        bool mouseDown = Input.touchCount > 0 || Input.GetMouseButton(0);
+        Vector2 pos = Input.touchCount > 0 ? Input.touches[0].position : Input.mousePosition;
+
         if (_state == State.None)
         {
             Dragging = false;
-            if (Input.touchCount > 0)
+            if (mouseDown)
             {
-                startPos = Input.touches[0].position;
+                startPos = pos;
+                _prevPos = startPos;
                 _state = State.Down;
             }
         }
         if (_state == State.Down)
         {
             Dragging = false;
-            if (Input.touchCount == 0)
+            if (!mouseDown)
             {
-                Click();
                 _state = State.None;
                 return;
             }
 
-            var pos = Input.touches[0].position;
             var d = (pos - startPos).magnitude;
 
             if (d > GameController.Instance.ViewDragThreshold)
@@ -62,17 +65,15 @@ public class RoomViewController : MonoBehaviour
         }
         if (_state == State.Dragging)
         {
-            if (Input.touchCount == 0) 
+            if (!mouseDown) 
             { 
                 _state = State.None;
                 return;
             }
 
-            Vector2 d = (Input.touches[0].deltaPosition);
+            Vector2 d = (pos - _prevPos);
             float pixelsPerDegreeH = Screen.width / 80f;
             float pixelsPerDegreeV = Screen.height / 80f;
-            float y = transform.eulerAngles.y;
-            //Vector3 right = new Vector3(Mathf.Cos(y * Mathf.Deg2Rad), Mathf.Sin(y * Mathf.Deg2Rad));
 
             Vector3 angles = transform.localEulerAngles;
 
@@ -86,10 +87,10 @@ public class RoomViewController : MonoBehaviour
 
             transform.localEulerAngles = angles;
         }
-    }
 
-    void Click()
-    {
-
+        if (mouseDown)
+        {
+            _prevPos = pos;
+        }
     }
 }
