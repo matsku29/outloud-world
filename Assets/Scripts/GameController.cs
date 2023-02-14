@@ -2,7 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
-using System.Reflection.Emit;
 #if UNITY_EDITOR
 using UnityEditor;
 #endif
@@ -22,6 +21,7 @@ public class GameController : MonoBehaviour
 
     RoomViewController _currentRoom;
 
+    List<Item> itemQueue = new();
     Item _currentItem = null;
     Item CurrentItem
     {
@@ -87,9 +87,20 @@ public class GameController : MonoBehaviour
 
     public void NewItem()
     {
-        var itemlist = new List<Item>(items);
-        itemlist.Remove(CurrentItem);
-        CurrentItem = itemlist[Random.Range(0, itemlist.Count- 1)];
+        itemQueue.Remove(CurrentItem);
+        if (itemQueue.Count == 0)
+        {
+            itemQueue.AddRange(items);
+        }
+        itemQueue = itemQueue.OrderBy((x) => { return Random.value; }).ToList();
+        if (itemQueue[0] == CurrentItem)
+        {
+            var temp = itemQueue[0];
+            int r = Random.Range(1, itemQueue.Count - 1);
+            itemQueue[0] = itemQueue[r];
+            itemQueue[r] = temp;
+        }
+        CurrentItem = itemQueue[0];
     }
 }
 
