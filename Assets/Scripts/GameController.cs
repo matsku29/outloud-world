@@ -144,6 +144,11 @@ public class GameControllerEditor : Editor
             var item = items.GetArrayElementAtIndex(i);
             if (item != null)
             {
+                if ((target as GameController).items[i] == null)
+                {
+                    GUILayout.EndHorizontal();
+                    continue;
+                }
                 GUILayout.Label((target as GameController).items[i].displayName, GUILayout.ExpandWidth(true), GUILayout.MinWidth(100f));
                 if (GUILayout.Button("->"))
                 {
