@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 #if UNITY_EDITOR
 using UnityEditor;
 #endif
@@ -87,6 +88,11 @@ public class GameController : MonoBehaviour
 
     public void NewItem()
     {
+        if (itemQueue.Count == 1)
+        {
+            // Game end
+            SceneManager.LoadScene("EndScene");
+        }
         itemQueue.Remove(CurrentItem);
         if (itemQueue.Count == 0)
         {
