@@ -97,7 +97,7 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
-  m_LightingDataAsset: {fileID: 0}
+  m_LightingDataAsset: {fileID: 112000000, guid: 5ed40168d5dddcd40be72521d3eadbbc, type: 2}
   m_LightingSettings: {fileID: 0}
 --- !u!196 &4
 NavMeshSettings:
@@ -3885,6 +3885,32 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 8d3771fa900581b4e9a927d5651b44dd, type: 3}
   m_PrefabInstance: {fileID: 692969952}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &433677867
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 433677862}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c38a229d12e5fb47812ee1205837c07, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  displayName: kultakala
+--- !u!65 &433677868
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 433677862}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.14333937, y: 0.20372346, z: 0.21885744}
+  m_Center: {x: -0.007624528, y: -0.039795782, z: -0.027981363}
 --- !u!4 &445742681 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 1b0cb8e3ee1fd5f4cba007663f8cc72f, type: 3}
@@ -12275,6 +12301,9 @@ MonoBehaviour:
   - {fileID: 1569804023}
   - {fileID: 769827287}
   - {fileID: 1490006164}
+  - {fileID: 433677867}
+  - {fileID: 8803628295882740328}
+  - {fileID: 8260085175822788782}
   sprites:
   - {fileID: 21300000, guid: c8745301405fda843b0a81b5c45c8511, type: 3}
   - {fileID: 21300000, guid: 3880a7f0d051f624a9742d683be860c4, type: 3}
@@ -12302,9 +12331,12 @@ MonoBehaviour:
   - {fileID: 21300000, guid: ebb7094954d62c24a910a1fb72c6f798, type: 3}
   - {fileID: 21300000, guid: f4c48e6b565e3f0439ee8e5272e1a33c, type: 3}
   - {fileID: 21300000, guid: 083efc9a160973c46a5c0b0f26189ce1, type: 3}
+  - {fileID: 21300000, guid: 150d5de4675115841a32dc86bfa779f2, type: 3}
+  - {fileID: 21300000, guid: c5db549691dbaef4aab5950412fe949a, type: 3}
+  - {fileID: 21300000, guid: fce3084d21d153b4588151997c2fe28d, type: 3}
   startingRoom: makuuhuone
   itemDisplay: {fileID: 1340549683}
-  ViewDragThreshold: 26
+  ViewDragThreshold: 29
 --- !u!4 &972416719
 Transform:
   m_ObjectHideFlags: 0
@@ -28902,8 +28934,6 @@ GameObject:
   - component: {fileID: 448697781870788315}
   - component: {fileID: 589749418590543418}
   - component: {fileID: 8650563914461403648}
-  - component: {fileID: 8650563914461403650}
-  - component: {fileID: 8650563914461403649}
   m_Layer: 0
   m_Name: Tv_unit
   m_TagString: Untagged
@@ -30037,7 +30067,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8260085175822788781}
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.000000024795531, y: 0.8805218, z: 0.000000793457}
+  m_LocalPosition: {x: -0.451, y: 0.8805218, z: -0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -31396,6 +31426,8 @@ GameObject:
   - component: {fileID: 1993128214267734187}
   - component: {fileID: 8803628295882740326}
   - component: {fileID: 959177903515471242}
+  - component: {fileID: 8803628295882740327}
+  - component: {fileID: 8803628295882740328}
   m_Layer: 0
   m_Name: ps5_cpnt
   m_TagString: Untagged
@@ -31465,6 +31497,8 @@ GameObject:
   - component: {fileID: 6593853710846639638}
   - component: {fileID: 6204277688518566279}
   - component: {fileID: 7186561793724719103}
+  - component: {fileID: 8260085175822788783}
+  - component: {fileID: 8260085175822788782}
   m_Layer: 0
   m_Name: television
   m_TagString: Untagged
@@ -31472,6 +31506,32 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &8260085175822788782
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8260085175822788781}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c38a229d12e5fb47812ee1205837c07, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  displayName: TV
+--- !u!65 &8260085175822788783
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8260085175822788781}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.6996504, y: 1.0627809, z: 0.07330782}
+  m_Center: {x: 0.000009536743, y: 0, z: 0.0000038146973}
 --- !u!4 &8267974081778125462
 Transform:
   m_ObjectHideFlags: 0
@@ -31996,32 +32056,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &8650563914461403649
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5522960737412079444}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7c38a229d12e5fb47812ee1205837c07, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  displayName: peliohjaimet
---- !u!65 &8650563914461403650
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5522960737412079444}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.6066408, y: 0.13613582, z: 0.4036891}
-  m_Center: {x: 0.9966676, y: 0.37267452, z: -0.12606597}
 --- !u!1 &8695759344480597656
 GameObject:
   m_ObjectHideFlags: 0
@@ -32192,6 +32226,32 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8204007487034604127}
   m_Mesh: {fileID: 8113632504755858234, guid: 02ad78cca7f19f843b49a2e580791919, type: 3}
+--- !u!65 &8803628295882740327
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8204007487034604127}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.55069983, y: 0.079221725, z: 0.35189092}
+  m_Center: {x: 0.1440363, y: 0.00926739, z: 0.03350261}
+--- !u!114 &8803628295882740328
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8204007487034604127}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c38a229d12e5fb47812ee1205837c07, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  displayName: peliohjaimet
 --- !u!4 &8872675048541559758
 Transform:
   m_ObjectHideFlags: 0
