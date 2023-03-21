@@ -5665,6 +5665,11 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 539264059}
   m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &558602775 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 33a59f869387e8f4f9e576a433ae6aba, type: 3}
+  m_PrefabInstance: {fileID: 505264304}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &564277978 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: cd97f31ec0779b0478095d3e9beb99dc, type: 3}
@@ -12280,7 +12285,7 @@ MonoBehaviour:
   - {fileID: 315496821}
   - {fileID: 807224295}
   - {fileID: 960227787}
-  - {fileID: 445742685}
+  - {fileID: 7265632710159895400}
   - {fileID: 944575326}
   - {fileID: 1427988043}
   - {fileID: 1115904490}
@@ -12304,13 +12309,14 @@ MonoBehaviour:
   - {fileID: 433677867}
   - {fileID: 8803628295882740328}
   - {fileID: 8260085175822788782}
+  - {fileID: 1344114367}
   sprites:
   - {fileID: 21300000, guid: c8745301405fda843b0a81b5c45c8511, type: 3}
   - {fileID: 21300000, guid: 3880a7f0d051f624a9742d683be860c4, type: 3}
   - {fileID: 21300000, guid: 9357bd5a3e19dff43bb049e8b4af4f6b, type: 3}
   - {fileID: 21300000, guid: 3b28f0243c6990945b932e72d61c61da, type: 3}
   - {fileID: 21300000, guid: 14bb86c82ce11854792050acb3dbb581, type: 3}
-  - {fileID: 21300000, guid: f1531579bcfef9649b7cb44f777444ae, type: 3}
+  - {fileID: 21300000, guid: 8f3043aa5caf9ce429b5927854afa3ef, type: 3}
   - {fileID: 21300000, guid: ef63be69c5e60a3409ff8c1f127cef19, type: 3}
   - {fileID: 21300000, guid: 77805d0a41adc084d8b571a97a86169e, type: 3}
   - {fileID: 21300000, guid: 7a1192e4eb65b904e98518dac9fe2d0e, type: 3}
@@ -12334,9 +12340,10 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 150d5de4675115841a32dc86bfa779f2, type: 3}
   - {fileID: 21300000, guid: c5db549691dbaef4aab5950412fe949a, type: 3}
   - {fileID: 21300000, guid: fce3084d21d153b4588151997c2fe28d, type: 3}
+  - {fileID: 21300000, guid: 6012bdc8cdf176147847f53fb6d6728a, type: 3}
   startingRoom: makuuhuone
   itemDisplay: {fileID: 1340549683}
-  ViewDragThreshold: 29
+  ViewDragThreshold: 30
 --- !u!4 &972416719
 Transform:
   m_ObjectHideFlags: 0
@@ -15192,6 +15199,32 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 33a59f869387e8f4f9e576a433ae6aba, type: 3}
   m_PrefabInstance: {fileID: 505264304}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1344114367
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 558602775}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c38a229d12e5fb47812ee1205837c07, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  displayName: kirjahylly
+--- !u!65 &1344114368
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 558602775}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2, y: 1.766716, z: 0.630366}
+  m_Center: {x: 0.0000076293945, y: -0.000024080276, z: -0.0000047683716}
 --- !u!1001 &1347616502
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -30067,7 +30100,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8260085175822788781}
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.451, y: 0.8805218, z: -0}
+  m_LocalPosition: {x: 0.167, y: 0.8805218, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -30085,6 +30118,8 @@ GameObject:
   - component: {fileID: 7265632710159895398}
   - component: {fileID: 1419772296546909967}
   - component: {fileID: 3011394384179121841}
+  - component: {fileID: 7265632710159895399}
+  - component: {fileID: 7265632710159895400}
   m_Layer: 0
   m_Name: Washer
   m_TagString: Untagged
@@ -30793,6 +30828,32 @@ Transform:
   m_Father: {fileID: 570658129}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &7265632710159895399
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6599159432492285357}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.9831887, y: 1.1094501, z: 1.1094502}
+  m_Center: {x: 0.16129586, y: 0, z: 0}
+--- !u!114 &7265632710159895400
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6599159432492285357}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c38a229d12e5fb47812ee1205837c07, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  displayName: pesukone
 --- !u!23 &7281665107677569326
 MeshRenderer:
   m_ObjectHideFlags: 0
