@@ -15,6 +15,7 @@ public class GameController : MonoBehaviour
 
     public string startingRoom;
     public ItemDisplay itemDisplay;
+    public GameObject ParticleSystemPrefab;
 
     public static GameController Instance;
 
@@ -79,6 +80,10 @@ public class GameController : MonoBehaviour
                 {
                     if (item == CurrentItem)
                     {
+                        var ps = Instantiate(ParticleSystemPrefab);
+                        ps.transform.position = hit.point;
+                        ps.transform.localScale = Vector3.one * 0.5f;
+                        Destroy(ps, 5f);
                         NewItem();
                     }
                 }

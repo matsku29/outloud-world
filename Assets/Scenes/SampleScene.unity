@@ -12349,6 +12349,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 6012bdc8cdf176147847f53fb6d6728a, type: 3}
   startingRoom: makuuhuone
   itemDisplay: {fileID: 1340549683}
+  ParticleSystemPrefab: {fileID: 3149314888859621141, guid: d6a6e24da9d9efa4285c0bfe5252f7a9, type: 3}
   ViewDragThreshold: 30
 --- !u!4 &972416719
 Transform:
