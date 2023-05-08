@@ -19,8 +19,6 @@ public class PathNavigator : MonoBehaviour
     }
 
     public float speed;
-    public bool turnToDirection;
-    public bool smoothRotation;
     public float angularSpeed;
     public PathMode pathMode;
     public TurnMode turnMode;
@@ -54,7 +52,7 @@ public class PathNavigator : MonoBehaviour
             case PathMode.Loop:
                 {
                     _nodeIndex++;
-                    if (_nodeIndex >= path.Length - 1)
+                    if (_nodeIndex >= path.Length)
                     {
                         _nodeIndex = 0;
                     }
@@ -73,7 +71,7 @@ public class PathNavigator : MonoBehaviour
                     if (!_returning)
                     {
                         _nodeIndex++;
-                        if (_nodeIndex >= path.Length - 1)
+                        if (_nodeIndex >= path.Length)
                         {
                             _nodeIndex--;
                             _returning = true;
@@ -99,7 +97,7 @@ public class PathNavigator : MonoBehaviour
         }
 
         Vector3 nodePos = path[_nodeIndex].transform.position;
-        Vector3 delta = transform.position - nodePos;
+        Vector3 delta = nodePos - transform.position;
 
         if (turnMode == TurnMode.None)
         {
@@ -109,7 +107,7 @@ public class PathNavigator : MonoBehaviour
             }
             else
             {
-                transform.position += delta.normalized * Time.deltaTime;
+                transform.position += speed * Time.deltaTime * delta.normalized;
             }
         }
 
@@ -121,7 +119,7 @@ public class PathNavigator : MonoBehaviour
             }
 
             Quaternion lookAtRotation = Quaternion.LookRotation(delta);
-            float angle = Quaternion.Angle(lookAtRotation, transform.rotation) * Mathf.Deg2Rad;
+            float angle = Quaternion.Angle(lookAtRotation, transform.rotation);
 
             if (turnMode == TurnMode.TurnInPlace)
             {
@@ -131,7 +129,26 @@ public class PathNavigator : MonoBehaviour
                 }
                 else
                 {
-
+                    if (delta.sqrMagnitude < speed * Time.deltaTime)
+                    {
+                        NextNode();
+                    }
+                    else
+                    {
+                        transform.SetPositionAndRotation(transform.position + speed * Time.deltaTime * delta.normalized, lookAtRotation);
+                    }
+                    
+                }
+            }   
+            else
+            {
+                if (delta.sqrMagnitude < speed * Time.deltaTime)
+                {
+                    NextNode();
+                }
+                else
+                {
+                    transform.SetPositionAndRotation(transform.position + speed * Time.deltaTime * delta.normalized, Quaternion.RotateTowards(transform.rotation, lookAtRotation, Time.deltaTime * angularSpeed));
                 }
             }
         }
