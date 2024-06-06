@@ -10,6 +10,14 @@ public class CreditsViewer : MonoBehaviour
     public GameObject canvas;
     public float scrollSpeed = 10f;
 
+    public void Close()
+    {
+        background.color = Color.clear;
+
+        text.transform.localPosition = Vector3.zero;
+        canvas.SetActive(false);
+    }
+
     public void ShowCredits()
     {
         canvas.SetActive(true);
@@ -18,8 +26,9 @@ public class CreditsViewer : MonoBehaviour
 
     IEnumerator Sequence()
     {
-        float startTime = Time.time;
         float t = 0f;
+        text.transform.localPosition = Vector3.zero;
+
         // Fade to black
         while (t < 1f)
         {
